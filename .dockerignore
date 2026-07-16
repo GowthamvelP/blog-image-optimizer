@@ -11,3 +11,9 @@ yarn.lock
 pnpm-lock.yaml
 tmp
 coverage
+
+# Test and dev tooling (not needed for production build)
+__tests__
+babel.jest.js
+jest.config.js
+docs
