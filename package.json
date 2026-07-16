@@ -7,14 +7,24 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "docker:build": "docker build -t blog-image-optimizer .",
     "docker:run": "docker run -p 3000:3000 blog-image-optimizer"
   },
   "dependencies": {
+    "formidable": "^3.5.1",
     "next": "14.2.5",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "sharp": "^0.33.5",
-    "formidable": "^3.5.1"
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
+    "babel-jest": "^30.4.1",
+    "jest": "^30.4.2",
+    "jest-environment-node": "^30.4.1",
+    "node-mocks-http": "^1.18.0"
   }
 }

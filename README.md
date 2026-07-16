@@ -169,3 +169,30 @@ npm run dev
 Then visit http://localhost:3000.
 
 See the source in `pages/api/upload.js` for the API and `lib/imageProcessor.js` for the Sharp processing logic.
+
+### Running Tests
+
+The project includes a test suite with unit and integration tests covering the image processor and upload API.
+
+```bash
+npm test
+```
+
+**What's tested (18 tests across 2 suites):**
+
+| Suite | Coverage |
+|-------|----------|
+| `__tests__/imageProcessor.test.js` | File generation, output structure, `<picture>` HTML correctness, markdown output, default options, directory creation, invalid input handling, fallback image selection, srcset descriptors |
+| `__tests__/upload.test.js` | Method rejection (405), missing file (400), invalid file type (400), single upload, multi-upload with array results, per-image alt text, default alt fallback, slug sanitization, bare upload without optional fields |
+
+The integration tests send real HTTP multipart requests to the API handler (no mocks for Formidable or Sharp), so they validate the full processing pipeline end-to-end.
+
+### Project Structure
+
+```
+pages/index.js          → Upload UI (React, single page)
+pages/api/upload.js     → POST endpoint: multipart parsing, validation, processing
+lib/imageProcessor.js   → Core logic: Sharp resize, format conversion, HTML/Markdown generation
+__tests__/              → Jest test suites
+__tests__/fixtures/     → Test fixture images
+```
