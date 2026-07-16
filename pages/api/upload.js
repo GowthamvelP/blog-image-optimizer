@@ -14,6 +14,18 @@ export const config = {
 const uploadDir = process.env.UPLOAD_DIR || path.join(process.cwd(), 'public', 'images', 'uploads');
 fs.mkdir(uploadDir, { recursive: true }).catch(console.error);
 
+// Output formats: configurable via IMAGE_FORMATS env var (comma-separated)
+// Default: 'webp' in production for fast processing, 'webp,avif' locally
+const defaultFormats = process.env.NODE_ENV === 'production' ? ['webp'] : ['webp', 'avif'];
+const outputFormats = process.env.IMAGE_FORMATS
+  ? process.env.IMAGE_FORMATS.split(',').map(f => f.trim())
+  : defaultFormats;
+
+// Output widths: configurable via IMAGE_WIDTHS env var (comma-separated)
+const outputWidths = process.env.IMAGE_WIDTHS
+  ? process.env.IMAGE_WIDTHS.split(',').map(w => parseInt(w.trim(), 10))
+  : [400, 800, 1200, 2000];
+
 const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'];
 
 async function processSingleFile(file, { altText, postSlug }) {
@@ -38,8 +50,8 @@ async function processSingleFile(file, { altText, postSlug }) {
     const result = await processImage(buffer, {
       filenameBase,
       alt: altText,
-      widths: [400, 800, 1200, 2000],
-      formats: ['webp', 'avif'],
+      widths: outputWidths,
+      formats: outputFormats,
     }, uploadDir);
 
     const finalPicture = result.pictureHtml.replace(/(srcset|src)="([^"]+)"/g, (_, attr, value) => {
