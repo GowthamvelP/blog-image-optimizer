@@ -1,0 +1,25 @@
+# docker-compose.yml
+version: "3.9"
+
+services:
+  blog-image-optimizer:
+    build:
+      context: .            # use the current directory (where Dockerfile lives)
+      dockerfile: Dockerfile
+    image: blog-image-optimizer   # optional tag; you can also omit and let compose name it
+    container_name: blog-image-optimizer
+    restart: unless-stopped
+    ports:
+      - "3001:3000"         # host:container
+    volumes:
+      # Persist the uploads folder on the host so images survive container rebuilds
+      - ./public/images/uploads:/app/public/images/uploads
+    environment:
+      # NODE_ENV is already set in the Dockerfile, but you can override it here if needed
+      - NODE_ENV=production
+    # Optional: limit resources (adjust as you like)
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: "0.5"
+    #       memory: 512M

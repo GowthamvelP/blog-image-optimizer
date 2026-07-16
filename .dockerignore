@@ -1,0 +1,13 @@
+# .dockerignore
+node_modules
+.next
+docker-compose.yml
+Dockerfile
+.git
+.gitignore
+.env
+.npmrc
+yarn.lock
+pnpm-lock.yaml
+tmp
+coverage

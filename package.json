@@ -1,0 +1,20 @@
+{
+  "name": "blog-image-optimizer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "docker:build": "docker build -t blog-image-optimizer .",
+    "docker:run": "docker run -p 3000:3000 blog-image-optimizer"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "sharp": "^0.33.5",
+    "formidable": "^3.5.1"
+  }
+}
