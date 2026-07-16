@@ -2,7 +2,7 @@
 const config = {
   testEnvironment: 'node',
   transform: {
-    '^.+\\.(js|jsx)$': 'babel-jest',
+    '^.+\\.(js|jsx)$': ['babel-jest', { configFile: './babel.jest.js' }],
   },
   transformIgnorePatterns: [
     '/node_modules/(?!formidable)',
