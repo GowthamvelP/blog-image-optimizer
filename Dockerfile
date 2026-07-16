@@ -43,8 +43,8 @@ RUN mkdir -p public/images/uploads && chown -R nextjs:nodejs public
 
 USER nextjs
 
-# Expose the port Next.js runs on
+# Expose the port (Render assigns via PORT env var)
 EXPOSE 3000
 
-# Start the application
-CMD ["npm", "start"]
+# Start the application - use PORT env var (Render sets this dynamically)
+CMD ["sh", "-c", "node_modules/.bin/next start -p ${PORT:-3000}"]
