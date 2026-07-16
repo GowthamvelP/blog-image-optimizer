@@ -4,13 +4,23 @@ Upload an image, get back optimized versions ready to paste into your blog. The 
 
 ## Screenshots
 
-| Upload UI | Generated Output |
-|-----------|-----------------|
-| ![Upload UI](docs/screenshots/upload-ui.png) | ![Generated Output](docs/screenshots/generated-output.png) |
+### Upload Interface
 
-| Blog Preview |
-|--------------|
-| ![Blog Preview](docs/screenshots/blog-preview.png) |
+| Empty State | Files Selected |
+|-------------|---------------|
+| ![Empty upload form](docs/screenshots/01-upload-empty.png) | ![Multiple files selected with per-image alt text](docs/screenshots/02-upload-files-selected.png) |
+
+### Processing & Results
+
+| Processing | Results (Multiple Images) |
+|------------|--------------------------|
+| ![Processing images with progress bar](docs/screenshots/03-processing.png) | ![Generated markup for multiple images](docs/screenshots/04-result-multiple.png) |
+
+### Blog Output Preview
+
+| Desktop View | Mobile View (DevTools) |
+|--------------|----------------------|
+| ![Blog preview with responsive images on desktop](docs/screenshots/05-blog-web-view.png) | ![Blog preview in mobile responsive mode](docs/screenshots/06-blog-mobile-view.png) |
 
 ## What You Need Before Starting
 
@@ -53,11 +63,12 @@ You should see the upload page.
 
 ## How to Use It
 
-1. Click **Choose File** and pick a JPEG, PNG, or WebP image (max 5 MB)
-2. Optionally type in alt text (a short description of the image — good for accessibility and SEO)
-3. Optionally type in a post slug (like `my-first-blog-post` — used in the filename)
-4. Click **Upload**
-5. Copy the generated HTML or Markdown code and paste it into your blog
+1. Drag and drop one or more images onto the upload area, or click to browse (JPEG, PNG, WebP, SVG — max 5 MB each)
+2. Optionally type alt text for each image individually, or fill in the **Default Alt Text** field to apply to all
+3. Optionally type in a post slug (like `my-first-blog-post` — used in filenames)
+4. Click **Optimize & Generate Code** (or **Optimize N Images** for multiple)
+5. Copy the generated HTML or Markdown for each image — or use **Copy All** for batch output
+6. Paste the code into your blog
 
 ## Where Are My Processed Images?
 
