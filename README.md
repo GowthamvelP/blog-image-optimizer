@@ -63,7 +63,7 @@ You should see the upload page.
 
 ## How to Use It
 
-1. Drag and drop one or more images onto the upload area, or click to browse (JPEG, PNG, WebP, SVG — max 5 MB each)
+1. Drag and drop one or more images onto the upload area, or click to browse (JPEG, PNG, WebP, SVG — max 10 MB each)
 2. Optionally type alt text for each image individually, or fill in the **Default Alt Text** field to apply to all
 3. Optionally type in a post slug (like `my-first-blog-post` — used in filenames)
 4. Click **Optimize & Generate Code** (or **Optimize N Images** for multiple)
@@ -125,7 +125,7 @@ Only these image formats are accepted:
 
 ### Upload says "Image processing failed"
 
-The image might be corrupted or too large. Try a different image under 5 MB.
+The image might be corrupted or too large. Try a different image under 10 MB.
 
 ## What the App Does Behind the Scenes
 
@@ -222,7 +222,7 @@ In local development (`NODE_ENV` is not `production`), both WebP and AVIF are ge
 
 | Category | Limitation |
 |----------|-----------|
-| **File size** | Max 5 MB per image |
+| **File size** | Max 10 MB per image (smaller files recommended on free tier for faster processing) |
 | **File types** | JPEG, PNG, WebP, SVG only |
 | **Batch limit** | Up to 20 images per upload |
 | **Output format** | WebP only in production (AVIF disabled on low-CPU hosts) |

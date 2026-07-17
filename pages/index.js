@@ -25,8 +25,8 @@ export default function Home() {
         setError(`"${f.name}" is not a supported format. Use JPEG, PNG, WebP, or SVG.`);
         continue;
       }
-      if (f.size > 5 * 1024 * 1024) {
-        setError(`"${f.name}" exceeds 5 MB.`);
+      if (f.size > 10 * 1024 * 1024) {
+        setError(`"${f.name}" exceeds 10 MB.`);
         continue;
       }
       valid.push(f);
@@ -587,7 +587,7 @@ export default function Home() {
                     Drop your images here, or <strong>click to browse</strong>
                   </p>
                   <p className="dropzone-hint">
-                    JPEG, PNG, WebP, SVG up to 5 MB each &middot; Multiple files supported
+                    JPEG, PNG, WebP, SVG up to 10 MB each &middot; Multiple files supported
                   </p>
                 </div>
 
