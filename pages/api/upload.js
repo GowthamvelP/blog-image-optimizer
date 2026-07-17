@@ -58,7 +58,7 @@ async function processSingleFile(file, { altText, postSlug }) {
       if (value.startsWith('/')) {
         return `${attr}="${value}"`;
       }
-      return `${attr}="/images/uploads/${value.replace(/^\/+/, '')}"`;
+      return `${attr}="/api/images/uploads/${value.replace(/^\/+/, '')}"`;
     });
 
     return {

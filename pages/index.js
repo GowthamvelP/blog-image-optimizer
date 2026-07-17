@@ -496,6 +496,27 @@ export default function Home() {
           color: #fff;
           border-color: #10b981;
         }
+        .download-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.35rem;
+          width: 100%;
+          margin-top: 0.5rem;
+          padding: 0.5rem 0.75rem;
+          font-size: 0.8rem;
+          font-weight: 500;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: all 0.15s;
+          background: #f0fdf4;
+          color: #166534;
+          border: 1px solid #bbf7d0;
+          text-decoration: none;
+        }
+        .download-btn:hover {
+          background: #dcfce7;
+        }
         .error-box {
           margin-top: 1rem;
           padding: 0.875rem 1rem;
@@ -752,6 +773,14 @@ export default function Home() {
                               {copied === `md-${i}` ? '\u2713 Copied!' : 'Copy Markdown'}
                             </button>
                           </div>
+
+                          <a
+                            className="download-btn"
+                            href={`/api/download?id=${encodeURIComponent(r.id)}`}
+                            download
+                          >
+                            &#11015; Download Images (.zip)
+                          </a>
 
                           {r.alt && (
                             <p style={{ marginTop: '0.75rem', fontSize: '0.8rem', color: '#6b7280' }}>
