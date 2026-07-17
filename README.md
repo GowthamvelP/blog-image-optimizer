@@ -68,7 +68,8 @@ You should see the upload page.
 3. Optionally type in a post slug (like `my-first-blog-post` — used in filenames)
 4. Click **Optimize & Generate Code** (or **Optimize N Images** for multiple)
 5. Copy the generated HTML or Markdown for each image — or use **Copy All** for batch output
-6. Paste the code into your blog
+6. **Download the optimized images** using the "Download Images (.zip)" button — this gives you all the resized variants to upload to your own blog hosting
+7. Upload the downloaded images to your blog's media folder and update the paths in the HTML if needed
 
 ## Where Are My Processed Images?
 
